@@ -1,0 +1,9 @@
+ouc:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    host: localhost
+    host: 101.200.129.164
+    port: 3306
+    database: senseless_check_in
+    username: root
+    password: 123456
