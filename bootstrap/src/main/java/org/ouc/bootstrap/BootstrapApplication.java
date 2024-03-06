@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"org.ouc.management"})
-@MapperScan(basePackages = {"org.ouc.management.mapper"})
+@ComponentScan(basePackages = {"org.ouc.management","org.ouc.schedule"})
+@MapperScan(basePackages = {"org.ouc.management.mapper","org.ouc.schedule"})
 public class BootstrapApplication {
 
     public static void main(String[] args) {
