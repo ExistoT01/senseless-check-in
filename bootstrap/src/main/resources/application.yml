@@ -9,3 +9,11 @@ spring:
     url: jdbc:mysql://${ouc.datasource.host}:${ouc.datasource.port}/${ouc.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
     username: ${ouc.datasource.username}
     password: ${ouc.datasource.password}
+logging:
+  level:
+    org:
+      ouc:
+        management:
+          service: debug
+          controller: debug
+          mapper: debug

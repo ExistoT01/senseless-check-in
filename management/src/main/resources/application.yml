@@ -1,0 +1,8 @@
+logging:
+  level:
+    org:
+      ouc:
+        management:
+          mapper: debug
+          service: debug
+          controller: debug

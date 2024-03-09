@@ -1,4 +1,4 @@
-package org.ouc.management.Controller;
+package org.ouc.management.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.ouc.common.result.Result;
