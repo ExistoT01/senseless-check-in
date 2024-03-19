@@ -19,9 +19,6 @@ import java.util.List;
 
 /**
  * @Description: 摄像头管理
- * @Author: jeecg-boot
- * @Date:   2024-02-19
- * @Version: V1.0
  */
 @Service
 public class CameraManageServiceImpl extends ServiceImpl<CameraManageMapper, CameraManage> implements ICameraManageService {

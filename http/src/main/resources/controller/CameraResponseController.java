@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Description: 接收摄像头订阅
- * @Author: 张翔
- * @Date: 2021/8/6 9:54
- *
  */
 
 @Slf4j
