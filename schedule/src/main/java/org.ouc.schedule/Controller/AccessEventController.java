@@ -10,9 +10,9 @@ import org.ouc.common.result.Result;
 import org.ouc.schedule.service.AccessEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +20,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/accessEvent")
+@CrossOrigin(origins = "http://localhost:3000")
 @Slf4j
 public class AccessEventController {
 
@@ -44,12 +45,12 @@ public class AccessEventController {
     }
 
     @PostMapping(value = "/liuliang")
-    public Map<String, Object> liuliang(@RequestBody DateStringDto dateStringDto) {
+    public Map<String, Object> liuliang(@RequestBody ArrayList<String> dateStringDto) {
 
-        List<String> date = dateStringDto.getDateString();
-        String[] stringArray = date.toArray(new String[0]);
-        int size = accessEventService.liuliang(stringArray[0], stringArray[1]);
-        List<Liuliang> l = accessEventService.liuliangs(stringArray[0], stringArray[1]);
+
+
+        int size = accessEventService.liuliang(dateStringDto.get(0), dateStringDto.get(1));
+        List<Liuliang> l = accessEventService.liuliangs(dateStringDto.get(0), dateStringDto.get(1));
         Map<String, Object> responseData = new HashMap<>();
         responseData.put("total", size); // 总人流量为员工数量
         responseData.put("children", l); // 员工列表作为children的值
