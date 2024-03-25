@@ -1,5 +1,6 @@
 package service.impl;
 
+import VO.GetFaceDatabaseIdVO;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import entity.*;
@@ -18,6 +19,7 @@ import service.CameraApiService;
 
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +53,9 @@ public class CameraApiImpl implements CameraApiService {
 
     @Autowired
     private RedisUtil redisUtil;
+
+    @Autowired
+    private CameraApiService cameraApiService;
 
     /**
      * 人脸信息查询--根据手机号查询
@@ -146,6 +151,33 @@ public class CameraApiImpl implements CameraApiService {
         String createdId = res.getResponse().getCreatedId();
         //将刷新订阅id存入redis
         redisUtil.hset(ConfigConstant.CAMERA_CREATEDID_REDIS_KEY, cameraManage.getIp(), createdId, 3500);
+    }
+    @Override
+    public GetFaceDatabaseIdVO getFaceDatabaseId(CameraManage cameraManage) {
+
+        //拼接请求地址
+        String url = String.format("http://%s/LAPI/V1.0/PeopleLibraries/BasicInfo", cameraManage.getIp());
+        ResponseEntity<String> response = httpResponse(url, HttpMethod.GET, null);
+        CameraFaceDatabaseResponse res = JSON.parseObject(response.getBody(), CameraFaceDatabaseResponse.class);
+        GetFaceDatabaseIdVO getFaceDatabaseIdVO = new GetFaceDatabaseIdVO();
+        List<GetFaceDatabaseIdVO.libIdListBean> resLibIdList = new ArrayList<>();
+        //获取符合查询条件的人脸库总数
+        if (res.getResponse().getData().getNum() > 0) {
+
+            List<CameraFaceDatabaseResponse.ResponseBean.DataBean.LibListBean> libList = res.getResponse().getData().getLibList();
+            libList.forEach(person -> {
+
+                GetFaceDatabaseIdVO.libIdListBean libIdListBean = new GetFaceDatabaseIdVO.libIdListBean();
+                libIdListBean.setName(new String(person.getName().getBytes(StandardCharsets.ISO_8859_1)));
+                libIdListBean.setLibId(person.getId());
+                resLibIdList.add(libIdListBean);
+            });
+        } else {
+            return getFaceDatabaseIdVO;
+        }
+        getFaceDatabaseIdVO.setLibIdList(resLibIdList);
+        //构建返回参数集合遍历取人脸库name，id
+        return getFaceDatabaseIdVO;
     }
 
     public ResponseEntity<String> httpResponse(String url, HttpMethod httpType, String jsonStr) {
