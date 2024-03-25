@@ -19,6 +19,12 @@
         <!-- 子模块 -->
         <dependency>
             <groupId>org.ouc</groupId>
+            <artifactId>http</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ouc</groupId>
             <artifactId>management</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
