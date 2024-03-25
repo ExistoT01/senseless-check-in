@@ -59,7 +59,7 @@ public class AccessEventController {
     }
 
     @GetMapping(value = "/dakaid/{id}")
-    public Map<String, Object> dakaid(@PathVariable String id) {
+    public List<Daka> dakaid(@PathVariable String id) {
         List<Daka> l = accessEventService.dakaid(id);
         for (Daka daka : l) {
             // 检查time是否为null或空字符串，以避免NullPointerException
@@ -68,13 +68,13 @@ public class AccessEventController {
                 daka.setTime(daka.getTime() + "h");
             }
         }
-        Map<String, Object> responseData = new HashMap<>();
-        responseData.put("children", l); // 员工列表作为children的值
-        return responseData;
+//        Map<String, Object> responseData = new HashMap<>();
+//        responseData.put("children", l); // 员工列表作为children的值
+        return l;
     }
 
     @GetMapping(value = "/daka")
-    public Map<String, Object> daka() {
+    public List<Clockin> daka() {
         List<Clockin> l = accessEventService.daka();
         for (Clockin daka : l) {
             // 检查time是否为null或空字符串，以避免NullPointerException
@@ -83,8 +83,8 @@ public class AccessEventController {
                 daka.setTime(daka.getTime() + "h");
             }
         }
-        Map<String, Object> responseData = new HashMap<>();
-        responseData.put("children", l); // 员工列表作为children的值
-        return responseData;
+//        Map<String, Object> responseData = new HashMap<>();
+//        responseData.put("children", l); // 员工列表作为children的值
+        return l;
     }
 }
