@@ -4,8 +4,9 @@ package org.ouc.schedule.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.ouc.common.pojo.entity.Clockin;
+import org.ouc.common.pojo.entity.Daka;
 import org.ouc.common.pojo.entity.Liuliang;
-import org.ouc.common.pojo.entity.TestLiuliang;
 
 import java.util.List;
 
@@ -45,4 +46,20 @@ public interface AccessEventMapper {
             "WHERE " +
             "a.access_time BETWEEN #{date1} AND #{date2}")
     List<Liuliang> liuliangs(@Param("date1") String date1, @Param("date2") String date2);
+
+    @Select("SELECT startTime, endTime, TIMESTAMPDIFF(SECOND, startTime, endTime) / 3600.0 AS time  FROM clock_in WHERE employee_id = #{id}")
+    List<Daka> dakaid(String id);
+
+    @Select("SELECT " +
+            "e.name, " +
+            "e.idNumber, " +
+            "CAST(COUNT(*) AS CHAR) AS times, " +
+            "CAST(SUM(TIMESTAMPDIFF(SECOND, a.startTime, a.endTime) / 3600.0) AS CHAR) AS time " +
+            "FROM " +
+            "clock_in a " +
+            "JOIN " +
+            "employees e ON a.employee_id = e.id " +
+            "GROUP BY " +
+            "e.idNumber, e.name")
+    List<Clockin> daka();
 }
