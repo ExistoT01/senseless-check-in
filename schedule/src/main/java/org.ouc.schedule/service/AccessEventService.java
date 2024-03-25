@@ -1,5 +1,7 @@
 package org.ouc.schedule.service;
 
+import org.ouc.common.pojo.entity.Clockin;
+import org.ouc.common.pojo.entity.Daka;
 import org.ouc.common.pojo.entity.Liuliang;
 import org.ouc.common.result.Result;
 import org.ouc.common.pojo.entity.AccessEvent;
@@ -39,4 +41,14 @@ public class AccessEventService {
     public List<Liuliang> liuliangs(String date1, String date2) {
         return accessEventMapper.liuliangs(date1, date2);
     }
+
+    public List<Daka> dakaid(String id) {
+        return accessEventMapper.dakaid(id);
+    }
+
+    public List<Clockin> daka() {
+        return accessEventMapper.daka();
+    }
+
+
 }
