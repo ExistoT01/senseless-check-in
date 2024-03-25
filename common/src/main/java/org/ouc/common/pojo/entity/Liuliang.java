@@ -14,6 +14,8 @@ public class Liuliang {
     private String total;
 
     public Liuliang(String number, Child[] children) {
+        this.total = number;
+        this.children = children;
     }
 
     public Child[] getChildren() { return children; }
