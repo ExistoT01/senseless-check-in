@@ -1,13 +1,12 @@
 package org.ouc.schedule.Controller;
 
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.ouc.common.pojo.dto.DateStringDto;
 import org.ouc.common.pojo.entity.Liuliang;
+import org.ouc.common.pojo.entity.TestLiuliang;
 import org.ouc.common.result.Result;
 import org.ouc.schedule.service.AccessEventService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;

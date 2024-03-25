@@ -1,8 +1,8 @@
 package org.ouc.management.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.ouc.common.pojo.entity.Child;
-import org.ouc.common.pojo.entity.Liuliang;
+import org.ouc.common.pojo.entity.LiuliangChild;
+import org.ouc.common.pojo.entity.TestLiuliang;
 import org.ouc.common.result.Result;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,10 +18,10 @@ public class liuliangController {
 
         // return Result.success();
 
-        Child child = new Child("男", "41542165542", "姜景达", "上班", "技术部");
+        LiuliangChild liuliangChild = new LiuliangChild("男", "41542165542", "姜景达", "上班", "技术部");
 
-        Liuliang liuliang = new Liuliang("1", new Child[]{child});
-        return Result.success(liuliang);
+        TestLiuliang testLiuliang = new TestLiuliang("1", new LiuliangChild[]{liuliangChild});
+        return Result.success(testLiuliang);
     }
 
 }

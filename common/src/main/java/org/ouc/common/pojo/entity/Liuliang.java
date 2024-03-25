@@ -1,27 +1,12 @@
 package org.ouc.common.pojo.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-// Response.java
 
 public class Liuliang {
-    private Child[] children;
-    /**
-     * 总人流量
-     */
-    private String total;
+    private String name;
+    private String idNumber;
+    private String purp; // 打卡目的
+    private String gender;
+    private String sec; // 部门
 
-    public Liuliang(String number, Child[] children) {
-        this.total = number;
-        this.children = children;
-    }
-
-    public Child[] getChildren() { return children; }
-    public void setChildren(Child[] value) { this.children = value; }
-
-    public String getTotal() { return total; }
-    public void setTotal(String value) { this.total = value; }
+    // 构造方法、getter和setter省略...
 }
-
