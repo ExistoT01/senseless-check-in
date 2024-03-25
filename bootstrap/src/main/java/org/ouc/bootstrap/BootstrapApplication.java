@@ -4,9 +4,11 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"org.ouc.management","org.ouc.schedule"})
+@EnableWebMvc
+@ComponentScan(basePackages = {"org.ouc.management","org.ouc.schedule", "org.ouc.bootstrap"})
 @MapperScan(basePackages = {"org.ouc.management.mapper","org.ouc.schedule"})
 public class BootstrapApplication {
 
