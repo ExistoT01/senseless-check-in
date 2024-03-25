@@ -4,6 +4,7 @@ package org.ouc.schedule.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.ouc.common.pojo.entity.Liuliang;
 import org.ouc.common.pojo.entity.TestLiuliang;
 
 import java.util.List;
@@ -33,15 +34,15 @@ public interface AccessEventMapper {
 
     @Select("SELECT " +
             "e.name, " +
-            "e.id_number, " +
-            "a.event_type AS '打卡目的', " +
+            "e.idNumber, " +
+            "a.purp, " +
             "e.gender, " +
             "e.sec " +
             "FROM " +
             "access_event a " +
             "JOIN " +
-            "employees e ON a.idNumber = e.idNumber " +
+            "employees e ON a.employee_id = e.id " +
             "WHERE " +
             "a.access_time BETWEEN #{date1} AND #{date2}")
-    List<TestLiuliang> liuliangs(@Param("date1") String date1, @Param("date2") String date2);
+    List<Liuliang> liuliangs(@Param("date1") String date1, @Param("date2") String date2);
 }

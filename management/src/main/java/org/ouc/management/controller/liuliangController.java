@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
-@RequestMapping("/liuliang")
+// @RequestMapping("/liuliang")
 public class liuliangController {
 
     // @CrossOrigin(origins = "http://localhost:3000")

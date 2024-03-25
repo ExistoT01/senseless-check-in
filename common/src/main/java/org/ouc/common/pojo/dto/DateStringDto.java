@@ -1,9 +1,17 @@
 package org.ouc.common.pojo.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 import java.util.List;
 
 
-public class DateStringDto {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DateStringDto implements Serializable {
     private List<String> dateString;
 
     // 标准的getter和setter方法
