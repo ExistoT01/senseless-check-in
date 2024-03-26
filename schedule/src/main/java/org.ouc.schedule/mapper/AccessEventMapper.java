@@ -35,14 +35,14 @@ public interface AccessEventMapper {
 
     @Select("SELECT " +
             "e.name, " +
-            "e.idNumber, " +
+            "e.id, " +
             "a.purp, " +
             "e.gender, " +
             "e.sec " +
             "FROM " +
             "access_event a " +
             "JOIN " +
-            "employees e ON a.employee_id = e.id " +
+            "employee_info e ON a.employee_id = e.id " +
             "WHERE " +
             "a.access_time BETWEEN #{date1} AND #{date2}")
     List<Liuliang> liuliangs(@Param("date1") String date1, @Param("date2") String date2);
@@ -58,7 +58,7 @@ public interface AccessEventMapper {
             "FROM " +
             "clock_in a " +
             "JOIN " +
-            "employees e ON a.employee_id = e.id " +
+            "employee_info e ON a.employee_id = e.id " +
             "GROUP BY " +
             "e.id, e.name")
     List<Clockin> daka();

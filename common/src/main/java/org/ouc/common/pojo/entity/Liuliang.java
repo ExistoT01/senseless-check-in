@@ -11,7 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Liuliang implements Serializable {
     private String name;
-    private String idNumber;
+    private String id;
     private String purp; // 打卡目的
     private String gender;
     private String sec; // 部门
