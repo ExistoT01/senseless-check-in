@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class AccessEventService {
@@ -50,5 +53,38 @@ public class AccessEventService {
         return accessEventMapper.daka();
     }
 
+    public Result addclock_in(String id, Timestamp startTime, Timestamp  endTime){
+        accessEventMapper.addclock_in(id, startTime,  endTime);
+        return Result.success();
+    }
+
+    public Result addaccess(String id, Timestamp  time, String purp){
+        accessEventMapper.addaccess(id, time, purp);
+        return Result.success();
+    }
+
+    public static LocalDateTime generateRandomDateTime() {
+        // 生成一个随机的过去的时间点（例如，过去的一年内）
+        Random random = new Random();
+        long daysAgo = random.nextInt(365); // 过去0到364天
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime randomPastDateTime = now.minusDays(daysAgo);
+
+        // 生成一天中的随机时间
+        int hour = random.nextInt(24);
+        int minute = random.nextInt(60);
+        int second = random.nextInt(60);
+        LocalDateTime randomTimeOfDay = LocalDateTime.of(randomPastDateTime.getYear(), randomPastDateTime.getMonth(), randomPastDateTime.getDayOfMonth(), hour, minute, second);
+
+        return randomTimeOfDay;
+    }
+
+    public static LocalDateTime generateRandomDateTimeAfter(LocalDateTime startTime) {
+        // 生成一个随机的endTime，确保它大于startTime
+        Random random = new Random();
+        long secondsToAdd = random.nextInt(3600 * 24); // 最多加一天的时间（秒为单位）
+        LocalDateTime endTime = startTime.plusSeconds(secondsToAdd);
+        return endTime;
+    }
 
 }

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Clockin {
     private String name;
-    private String idNumber;
+    private String id;
     private String times;
     private String time;
 }
