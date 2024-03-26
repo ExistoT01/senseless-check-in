@@ -66,11 +66,11 @@ public interface AccessEventMapper {
     List<Clockin> daka();
 
 
-    @Select("INSERT INTO clock_in (startTime, endTime, employee_id) VALUES (#{startTime}, #{startTime}, #{id})")
-    int addclock_in(String id, Timestamp startTime, Timestamp  endTime);
+    @Select("INSERT INTO clock_in (startTime, endTime, employee_id) VALUES (#{startTime}, #{endTime}, #{id})")
+    void addclock_in(String id, Timestamp startTime, Timestamp  endTime);
 
-    @Select("INSERT INTO clock_in (access_time, purp, employee_id) VALUES (#{time}, #{purp}, #{id})")
-    int addaccess(String id, Timestamp  time, String purp);
+    @Select("INSERT INTO access_event (access_time, purp, employee_id) VALUES (#{time}, #{purp}, #{id})")
+    void addaccess(String id, Timestamp  time, String purp);
 
 
 

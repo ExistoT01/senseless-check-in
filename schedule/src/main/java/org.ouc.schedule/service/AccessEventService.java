@@ -54,10 +54,14 @@ public class AccessEventService {
     }
 
     public Result addclock_in(String id, Timestamp startTime, Timestamp  endTime){
-        return Result.success(accessEventMapper.addclock_in(id, startTime,  endTime));}
+        accessEventMapper.addclock_in(id, startTime,  endTime);
+        return Result.success();
+    }
 
     public Result addaccess(String id, Timestamp  time, String purp){
-        return Result.success(accessEventMapper.addaccess(id, time, purp));}
+        accessEventMapper.addaccess(id, time, purp);
+        return Result.success();
+    }
 
     public static LocalDateTime generateRandomDateTime() {
         // 生成一个随机的过去的时间点（例如，过去的一年内）
