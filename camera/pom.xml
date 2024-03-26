@@ -35,27 +35,7 @@
             <artifactId>okhttp</artifactId>
             <version>3.10.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-annotation</artifactId>
-            <version>3.5.3.1</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-core</artifactId>
-            <version>3.5.3.1</version>
-        </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -70,7 +50,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.jeecgframework.boot</groupId>
             <artifactId>jeecg-boot-common</artifactId>
             <version>3.6.2</version>
@@ -80,12 +60,12 @@
             <artifactId>jeecg-boot-base-core</artifactId>
             <version>3.6.2</version>
         </dependency>
-        <!-- system 单体 api -->
+        &lt;!&ndash; system 单体 api &ndash;&gt;
         <dependency>
             <groupId>org.jeecgframework.boot</groupId>
             <artifactId>jeecg-system-local-api</artifactId>
             <version>3.6.2</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 

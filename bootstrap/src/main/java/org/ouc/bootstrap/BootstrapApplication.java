@@ -8,8 +8,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @EnableWebMvc
-@ComponentScan(basePackages = {"org.ouc.management","org.ouc.schedule", "org.ouc.bootstrap"})
-@MapperScan(basePackages = {"org.ouc.management.mapper","org.ouc.schedule"})
+@ComponentScan(basePackages = {"org.ouc.management","org.ouc.camera", "org.ouc.bootstrap"})
+@MapperScan(basePackages = {"org.ouc.management.mapper","org.ouc.schedule","org.ouc.camera.mapper"})
 public class BootstrapApplication {
 
     public static void main(String[] args) {

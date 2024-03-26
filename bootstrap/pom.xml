@@ -33,7 +33,11 @@
             <groupId>org.ouc</groupId>
             <artifactId>schedule</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency> <dependency>
+        <groupId>org.ouc</groupId>
+        <artifactId>camera</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
