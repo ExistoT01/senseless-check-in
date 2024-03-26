@@ -8,6 +8,8 @@ import org.ouc.common.pojo.entity.Clockin;
 import org.ouc.common.pojo.entity.Daka;
 import org.ouc.common.pojo.entity.Liuliang;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Mapper
@@ -62,4 +64,14 @@ public interface AccessEventMapper {
             "GROUP BY " +
             "e.id, e.name")
     List<Clockin> daka();
+
+
+    @Select("INSERT INTO clock_in (startTime, endTime, employee_id) VALUES (#{startTime}, #{startTime}, #{id})")
+    int addclock_in(String id, Timestamp startTime, Timestamp  endTime);
+
+    @Select("INSERT INTO clock_in (access_time, purp, employee_id) VALUES (#{time}, #{purp}, #{id})")
+    int addaccess(String id, Timestamp  time, String purp);
+
+
+
 }

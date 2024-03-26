@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -86,5 +88,25 @@ public class AccessEventController {
 //        Map<String, Object> responseData = new HashMap<>();
 //        responseData.put("children", l); // 员工列表作为children的值
         return l;
+    }
+
+    @GetMapping(value = "/clockin/{ids}")
+    public Result<Integer> clockin(@PathVariable String ids) {
+
+        String[] idArray = ids.split(",");
+        for (String i : idArray) {
+            LocalDateTime startTime = accessEventService.generateRandomDateTime();
+            LocalDateTime endTime = accessEventService.generateRandomDateTimeAfter(startTime);
+
+            // 将LocalDateTime转换为Timestamp，以便与数据库交互
+            Timestamp startTimestamp = Timestamp.valueOf(startTime);
+            Timestamp endTimestamp = Timestamp.valueOf(endTime);
+
+            accessEventService.addaccess(i, startTimestamp, "上班");
+            accessEventService.addaccess(i, endTimestamp, "下班");
+            accessEventService.addclock_in(i, startTimestamp, endTimestamp);
+        }
+
+        return Result.success(1);
     }
 }
