@@ -23,6 +23,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         converters.add(0, converter);
     }
 
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // 对所有的路径应用规则

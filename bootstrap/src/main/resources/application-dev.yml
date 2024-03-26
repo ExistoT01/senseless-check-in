@@ -2,8 +2,8 @@ ouc:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    host: localhost
-    host: 101.200.129.164
+    host: localhost
     port: 3306
-    database: senseless_check_in
+    database: jeecg-boot
     username: root
     password: 123456

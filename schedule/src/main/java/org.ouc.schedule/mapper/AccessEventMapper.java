@@ -52,7 +52,7 @@ public interface AccessEventMapper {
 
     @Select("SELECT " +
             "e.name, " +
-            "e.idNumber, " +
+            "e.id, " +
             "CAST(COUNT(*) AS CHAR) AS times, " +
             "CAST(SUM(TIMESTAMPDIFF(SECOND, a.startTime, a.endTime) / 3600.0) AS CHAR) AS time " +
             "FROM " +
@@ -60,6 +60,6 @@ public interface AccessEventMapper {
             "JOIN " +
             "employees e ON a.employee_id = e.id " +
             "GROUP BY " +
-            "e.idNumber, e.name")
+            "e.id, e.name")
     List<Clockin> daka();
 }
