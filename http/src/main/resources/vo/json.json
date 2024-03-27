@@ -1,0 +1,82 @@
+// 人员查询
+{
+    "Response": {
+    "ResponseURL": "/LAPI/V1.0/PeopleLibraries/1322731973/People/Info",
+    "CreatedID": -1, 
+    "ResponseCode": 0,
+    "SubResponseCode": 0,
+    "ResponseString": "Succeed",
+    "StatusCode": 0,
+    "StatusString": "Succeed",
+    "Data": {
+        "Total": 1,
+        "Offset": 0,
+        "PersonList": {
+            "Num": 1,
+            "PersonInfoList": [{
+            "PersonID":1,
+            "LastChange":147868087,
+            "PersonName":"123456",
+            "Gender":0,
+            "Birthday":"2021-01-14",
+            "Region": {
+                "Nation":"1111",
+                "Province":"2222",
+                "City":"3333"
+            },
+            "TimeTemplate": {
+                "BeginTime":0,
+                "EndTime":4294967295,
+                "Index":0
+            },
+            "IdentificationNum":1,
+            "IdentificationList": [{
+                "Type":0,
+                "Number":"123456789"
+                }],
+                "ImageNum":1,
+                "ImageList": [{
+                    "FaceID":1,
+                    "Name":"1_1.jpg",
+                    "Size":66020,
+                    "Data": "... "
+                    }]
+                }]
+            }
+        }
+    }
+}
+
+{
+    "Num":1,
+    "PersonInfoList": [{
+        "PersonID":0,
+        "LastChange":1610760604087,
+        "PersonName":"123456",
+        "Gender":0,
+        "Birthday":"2021-01-14",
+        "Region": {
+            "Nation":"1111",
+            "Province":"2222",
+            "City":"3333"
+        },
+        "TimeTemplate": {
+            "BeginTime":0,
+            "EndTime":4294967295,
+            "Index":0
+        },
+        "IdentificationNum":1,
+        "IdentificationList": [{
+            "Type":0,
+            "Number":"123456789"
+        }],
+        "ImageNum":1,
+        "ImageList": [{
+            "FaceID":0,
+            "Name":"",
+            "Size":232880,
+            "Type":1,
+            "Data":"...."
+        }]
+    }]
+}

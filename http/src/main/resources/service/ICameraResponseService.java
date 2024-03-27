@@ -1,8 +1,8 @@
 package org.ouc.http.src.main.resources.service;
 
-import org.jeecg.modules.demo.camera.entity.CameraFaceInfo;
-import org.jeecg.modules.demo.camera.entity.CameraImage;
-import org.jeecg.modules.demo.cameramanage.vo.CameraCallBackVo;
+//import org.ouc.camera.src.main.java.org.ouc.camera.entity.CameraFaceInfo;
+import org.ouc.camera.src.main.java.org.ouc.camera.entity.*;
+import org.ouc.http.src.main.resources.vo.CameraCallBackVo;
 
 
 public interface ICameraResponseService {
