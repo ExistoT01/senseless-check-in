@@ -1,4 +1,4 @@
-package org.ouc.camera.src.main.java.org.ouc.camera.entity;
+package org.ouc.camera.entity;
 
 /**
  * @Description: 常量类
