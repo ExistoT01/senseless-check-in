@@ -1,4 +1,4 @@
-// 人员查询
+// 人员查询 GET
 {
     "Response": {
     "ResponseURL": "/LAPI/V1.0/PeopleLibraries/1322731973/People/Info",
@@ -47,6 +47,7 @@
     }
 }
 
+// 人员信息修改 PUT
 {
     "Num":1,
     "PersonInfoList": [{
