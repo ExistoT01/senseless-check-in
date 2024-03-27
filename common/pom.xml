@@ -27,11 +27,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
+
+<!--        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-annotation</artifactId>
             <version>3.5.3.1</version>
-        </dependency>
+        </dependency>-->
+
 
     </dependencies>
 
