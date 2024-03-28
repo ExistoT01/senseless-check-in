@@ -2,14 +2,13 @@ package org.ouc.http.src.main.resources.service.impl;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.jeecg.modules.demo.api.service.ICameraManageApiService;
-import org.jeecg.modules.demo.camera.entity.CameraFaceInfo;
-import org.jeecg.modules.demo.camera.entity.CameraImage;
 import org.jeecg.modules.demo.cameramanage.entity.CameraManage;
-import org.jeecg.modules.demo.cameramanage.entity.ConfigConstant;
-import org.jeecg.modules.demo.cameramanage.mapper.CameraStatisticsMapper;
-import org.jeecg.modules.demo.cameramanage.service.ICameraManageService;
-import org.jeecg.modules.demo.cameramanage.service.ICameraResponseService;
-import org.jeecg.modules.demo.cameramanage.vo.CameraCallBackVo;
+import org.ouc.camera.src.main.java.org.ouc.camera.entity.*;
+//import org.jeecg.modules.demo.cameramanage.mapper.CameraStatisticsMapper;
+//import org.jeecg.modules.demo.cameramanage.service.ICameraManageService;
+//import org.jeecg.modules.demo.camera.mapper.xml.CameraFaceInfoMapper;
+import org.ouc.http.src.main.resources.service.*;
+import org.ouc.http.src.main.resources.vo.CameraCallBackVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +21,8 @@ public class CameraResponseServiceImpl implements ICameraResponseService {
     @Autowired
     private ICameraManageService iCameraManageService;
     @Autowired
-    private org.jeecg.modules.demo.camera.service.ICameraFaceInfoService cameraFaceInfoService;
-    @Autowired
     private ICameraManageApiService cameraManageApiService;
-    @Autowired
-    private org.jeecg.modules.demo.camera.mapper.CameraFaceInfoMapper cameraFaceInfoMapper;
-    @Autowired
-    private CameraStatisticsMapper cameraStatisticsMapper;
+
 
     @Override
     public CameraFaceInfo cameraCallBackInfoSave(CameraCallBackVo cameraCallBackVo) {
@@ -97,7 +91,7 @@ public class CameraResponseServiceImpl implements ICameraResponseService {
         cameraFaceInfo.setDeptid(deptId);
 
         //写入数据库
-        cameraFaceInfoMapper.insert(cameraFaceInfo);
+        //cameraFaceInfoMapper.insert(cameraFaceInfo);
         return cameraFaceInfo;
     }
 
